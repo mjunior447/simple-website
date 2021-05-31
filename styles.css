@@ -16,6 +16,7 @@
     --font-secondary: "Josefin Slab", serif;
     --action-font: "Muli", serif;
     --color-primary: #6a3093;
+    --color-secondary: #a044ff;
 }
 
 .sanduiche {
@@ -29,6 +30,34 @@
     flex-direction: column;
     justify-content: space-evenly;
     cursor: pointer;
+}
+
+.sanduiche span {
+    position: absolute;
+    left: 3rem;
+    background-color: var(--color-secondary);
+    width: 6rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: var(--action-font);
+    opacity: 0;
+}
+
+.sanduiche span::before {
+    content: "";
+    position: absolute;
+    border-right: .5rem solid var(--color-secondary);
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -1rem;
+}
+
+.show-menu .sanduiche:hover span {
+    opacity: 1;
 }
 
 .show-menu .sanduiche {
@@ -54,10 +83,6 @@
 
 .show-menu #line3 {
     transform: rotate(-45deg) translate(.3rem, -.45rem);
-}
-
-.sanduiche span {
-    
 }
 
 header {
@@ -124,8 +149,8 @@ header {
     text-transform: uppercase;
     letter-spacing: .1rem;
     background: var(--color-primary);  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #a044ff, var(--color-primary));  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #a044ff, var(--color-primary)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to left, var(--color-secondary), var(--color-primary));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, var(--color-secondary), var(--color-primary)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 1rem 3rem;
     border: none;
     border-radius: 3px;
